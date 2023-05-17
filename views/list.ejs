@@ -1,0 +1,66 @@
+<%- include ("header") -%>
+
+    <div class="box" id="heading">
+
+        <!--Ejs tag is enclosing whatDayIsToday variable.-->
+ 
+        <h1> Tasks for <%= listTitle %></h1>
+
+        <h2> <%= listDisplayDateInEnglish %> or <%= listDisplayDateInBengali %> </h2>
+   
+
+    </div>
+
+    <div class="box">
+
+         <!--These are special tags which are belongs to ejs. You can access the documentation at
+    https://ejs.co/#install . scriplet tags allows us to run basic javascript codes namely for 
+    control purpose. the tags are being represented greater than and lessa than sign accompanied 
+    with percentage signs for both tags. -->
+
+    <% for (var i =0; i<newlyAddedItembyUser.length; i++) { %>
+
+        <form action="/delete" method="post">
+
+        <div class="item">
+
+            <input type="checkbox" name="checkboxClicked" value="<%=newlyAddedItembyUser[i]._id %>" onchange="this.form.submit()">
+
+            <!-- Inserting Newly Added items to this array everytime user passes a input. 
+                Thus populating the array. for loop has been used where the loop will run 
+                as long as i<newlyAddedItembyUser.length-->
+        
+                 <p>  <%= newlyAddedItembyUser[i].taskName %> </p>
+
+                </div>
+
+                <input type="hidden" name="hiddenInputTypeName" value= <%= listTitle %>></input>
+
+                </form>
+                   
+       
+
+         <!--These are special tags which are belongs to ejs. You can access the documentation at
+    https://ejs.co/#install . scriplet tags allows us to run basic javascript codes namely for 
+    control purpose. the tags are being represented greater than and lessa than sign accompanied 
+    with percentage signs for both tags. -->
+        
+        <% } %>  
+
+
+  
+  
+        
+        <form class="item" action="/" method="post">
+
+            <input type="text" name="addNewItemTextBox" placeholder="Add new task to the list" autocomplete="on" required>
+        
+            <button type="submit" name="listButton" value= <%= listTitle %> > + </button>
+        
+           </form>
+
+          
+
+    </div>
+   
+<%- include ("footer")-%>

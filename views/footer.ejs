@@ -1,0 +1,19 @@
+<div class="boxBottom">
+    <p>© <b> MD FAYSAL SHAHAD.</b> <br> <span id="displayDateTime"> </span> </p>
+
+<script type="text/javascript">
+  var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+  var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+  //var time = today.getHours() + ":" + today.getMinutes() ":" + today.getSeconds();
+  //var dateTime = date+' '+time;
+  var dateTime = date;
+  document.getElementById("displayDateTime").innerHTML = dateTime + ' , ' + daylist[day] + '.';
+</script>
+
+</div>
+
+
+</body>
+</html>
