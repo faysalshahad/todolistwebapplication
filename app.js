@@ -52,7 +52,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 // connection URL to MongoDB Atlas Cloud Server database where todolistDB is the database name
-mongoose.connect("mongodb+srv://faysalshahad:F008801716500376@faysalshahad.nbqqn3d.mongodb.net/todolistDB", {useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://faysalshahad:<put your password. for safety i did not put it in public folder>@faysalshahad.nbqqn3d.mongodb.net/todolistDB", {useNewUrlParser:true, useUnifiedTopology:true});
 
 // connection URL to mongoose database locally where todolistDB is the database name
 //mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", {useNewUrlParser:true, useUnifiedTopology:true});
