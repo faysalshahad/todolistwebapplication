@@ -51,11 +51,14 @@ app.use(bodyParser.urlencoded({extended: true}));
  https://github.com/mde/ejs/wiki/Using-EJS-with-Express */
 app.set("view engine", "ejs");
 
-// connection URL to mongoose database where todolistDB is the database name
+// connection URL to MongoDB Atlas Cloud Server database where todolistDB is the database name
 mongoose.connect("mongodb+srv://faysalshahad:F008801716500376@faysalshahad.nbqqn3d.mongodb.net/todolistDB", {useNewUrlParser:true, useUnifiedTopology:true});
 
+// connection URL to mongoose database locally where todolistDB is the database name
+//mongoose.connect("mongodb://127.0.0.1:27017/todolistDB", {useNewUrlParser:true, useUnifiedTopology:true});
+
 //creating itemschema for todolistDB database
-const taskschema = new mongoose.Schema ({
+const taskschema = new mongoose.Schema ({ // taskschema start
 
     taskName:
 
@@ -67,10 +70,10 @@ const taskschema = new mongoose.Schema ({
     }
     
 
-});
+}); // taskschema end
 
 /**creating mongoose model. Here Task is the name of our collection for todolistDB database.
- * Mongoose requires always use singluar form. Such as instead of calling it Taska we are simply 
+ * Mongoose requires always use singluar form. Such as instead of calling it Tasks we are simply 
  * calling it Task which a singluar form. Mongoose will cleverly convert this singular form
  * into a plural form when creating the collection. 
  * by following this procedure we have created a new collection called Tasks and the Tasks
